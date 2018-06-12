@@ -1,5 +1,4 @@
 # Marketing
-MIT License
 
 Copyright (c) [2018] [Helios1101]
 
