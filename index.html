@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
 
     <!-- Title  -->
     <title>Amado - Furniture Ecommerce Template | Home</title>
@@ -199,7 +199,7 @@
                         <!-- Hover Content -->
                         <div class="hover-content">
                             <div class="line"></div>
-                            <p>From $318</p>
+                            <p id="r3">From $318</p>
                             <h4>Modern Rocking Chair</h4>
                         </div>
                     </a>
@@ -208,7 +208,7 @@
                 <!-- Single Catagory -->
                 <div class="single-products-catagory clearfix">
                     <a href="shop.html">
-                        <img src="img/bg-img/9.jpg" alt="">
+                        <img id="o1" src="img/bg-img/9.jpg" alt="">
                         <!-- Hover Content -->
                         <div class="hover-content">
                             <div class="line"></div>
@@ -310,6 +310,22 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+    <script>
+        var o;
+        function reqListener () {
+            o=JSON.parse(this.responseText);
+                console.log(o);
+                document.getElementById("r3").innerHTML=o[0].sellingPrice;
+    console.log(o[0].sellingPrice);
+        }
+
+var oReq = new XMLHttpRequest();
+oReq.addEventListener("load", reqListener);
+oReq.open("GET", "http://101.53.137.41/api/?cat=HealthandBeauty_WomenSafety_PepperSafetyDevices&count=100&offset=0;");
+oReq.send();
+
+
+    </script>
 
 </body>
 

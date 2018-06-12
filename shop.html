@@ -561,7 +561,18 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+    <script>
+        
+        function reqListener () {
+            let o=JSON.parse(this.responseText);
+	        console.log(o);
+        }
 
+var oReq = new XMLHttpRequest();
+oReq.addEventListener("load", reqListener);
+oReq.open("GET", "http://101.53.137.41/api/?cat=HealthandBeauty_WomenSafety_PepperSafetyDevices&count=100&offset=0;");
+oReq.send();
+    </script>
 </body>
 
 </html>
